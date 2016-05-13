@@ -1,0 +1,12 @@
+D:\VideoClub\VideoClub.Data\bin\Debug\VideoClub.Data.dll.config
+D:\VideoClub\VideoClub.Data\bin\Debug\VideoClub.Data.dll
+D:\VideoClub\VideoClub.Data\bin\Debug\VideoClub.Data.pdb
+D:\VideoClub\VideoClub.Data\bin\Debug\EntityFramework.dll
+D:\VideoClub\VideoClub.Data\bin\Debug\EntityFramework.SqlServer.dll
+D:\VideoClub\VideoClub.Data\bin\Debug\VideoClub.Model.dll
+D:\VideoClub\VideoClub.Data\bin\Debug\VideoClub.Model.pdb
+D:\VideoClub\VideoClub.Data\bin\Debug\EntityFramework.xml
+D:\VideoClub\VideoClub.Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\VideoClub\VideoClub.Data\obj\Debug\VideoClub.Data.csprojResolveAssemblyReference.cache
+D:\VideoClub\VideoClub.Data\obj\Debug\VideoClub.Data.dll
+D:\VideoClub\VideoClub.Data\obj\Debug\VideoClub.Data.pdb

@@ -1,0 +1,14 @@
+D:\VideoClub\VideoClub.Repository\obj\Debug\VideoClub.Repository.csprojResolveAssemblyReference.cache
+D:\VideoClub\VideoClub.Repository\bin\Debug\VideoClub.Repository.dll.config
+D:\VideoClub\VideoClub.Repository\bin\Debug\VideoClub.Repository.dll
+D:\VideoClub\VideoClub.Repository\bin\Debug\VideoClub.Repository.pdb
+D:\VideoClub\VideoClub.Repository\bin\Debug\EntityFramework.dll
+D:\VideoClub\VideoClub.Repository\bin\Debug\EntityFramework.SqlServer.dll
+D:\VideoClub\VideoClub.Repository\bin\Debug\VideoClub.Data.dll
+D:\VideoClub\VideoClub.Repository\bin\Debug\VideoClub.Model.dll
+D:\VideoClub\VideoClub.Repository\bin\Debug\VideoClub.Data.pdb
+D:\VideoClub\VideoClub.Repository\bin\Debug\VideoClub.Model.pdb
+D:\VideoClub\VideoClub.Repository\bin\Debug\EntityFramework.xml
+D:\VideoClub\VideoClub.Repository\bin\Debug\EntityFramework.SqlServer.xml
+D:\VideoClub\VideoClub.Repository\obj\Debug\VideoClub.Repository.dll
+D:\VideoClub\VideoClub.Repository\obj\Debug\VideoClub.Repository.pdb

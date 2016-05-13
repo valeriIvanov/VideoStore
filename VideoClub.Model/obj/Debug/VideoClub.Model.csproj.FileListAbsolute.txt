@@ -1,0 +1,5 @@
+D:\VideoClub\VideoClub.Model\bin\Debug\VideoClub.Model.dll
+D:\VideoClub\VideoClub.Model\bin\Debug\VideoClub.Model.pdb
+D:\VideoClub\VideoClub.Model\obj\Debug\VideoClub.Model.csprojResolveAssemblyReference.cache
+D:\VideoClub\VideoClub.Model\obj\Debug\VideoClub.Model.dll
+D:\VideoClub\VideoClub.Model\obj\Debug\VideoClub.Model.pdb
