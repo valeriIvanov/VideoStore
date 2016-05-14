@@ -1,6 +1,7 @@
-﻿using System;
+﻿
 namespace BusinessLayer
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
@@ -12,6 +13,7 @@ namespace BusinessLayer
     {
         MovieRepository movieRepository = new MovieRepository();
         GenreService genreService = new GenreService();
+        OrderRepository orderRepository = new OrderRepository();
 
         public string AddMovie(string name, string director, string genre, string quantity, string price, bool adult)
         {
@@ -19,8 +21,7 @@ namespace BusinessLayer
             {
 
                 int movieQuantity = Int32.Parse(quantity);
-                decimal moviePrice;
-                decimal.TryParse(quantity, out moviePrice);
+                decimal moviePrice = Convert.ToDecimal(price);
                 var genreEntity = genreService.AddGenre(genre);
                 var movie = new MovieEntity()
                 {
@@ -46,15 +47,17 @@ namespace BusinessLayer
             else { return "Имате непопълнени полета"; }
         }
 
-        public string DeleteMovie(string movieName)
+        public string DeleteMovie(string movieNumber, string movieName)
         {
             if(movieRepository.HasMovie(movieName) == true)
             {
-                if (movieRepository.DeleteMovie(movieName))
+                int number = int.Parse(movieNumber);
+                if (orderRepository.MovieHasOrders(number) == false)                    
                 {
+                    movieRepository.DeleteMovie(movieName);
                     return "Филмът е изтрит";
                 }
-                else { return "Филмът не е изтрит, възможно е да е резервиран от клиент."; }
+                else { return "Филмът не е изтрит, резервиран e от клиент."; }
             }
             else { return "Въвели сте несъществуващ филм"; }
         }

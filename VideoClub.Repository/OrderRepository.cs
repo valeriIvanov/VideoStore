@@ -10,13 +10,39 @@ namespace VideoClub.Repository
 {
     public class OrderRepository
     {
-        public List<string> SelectOrders()
+        public List<string> SelectAllOrders()
+        {
+            List<string> listOrders = new List<string>();
+            using (var db = new VideoClubDbContext())
+            {
+                var orders = db.Orders
+                    .Where(o => o.Person.Name != null)
+                    .Select(e => new
+                    {
+                        OrdersNumber = e.Id,
+                        PersonName = e.Person.Name,
+                        MovieName = e.Movie.Name,
+                        MakeTimeOrder = e.GetDate
+                    }
+                    )
+                    .ToList();
+                foreach (var order in orders)
+                {
+                    listOrders.Add(order.OrdersNumber.ToString());
+                    listOrders.Add(order.PersonName.ToString());
+                    listOrders.Add(order.MovieName.ToString());
+                    listOrders.Add(order.MakeTimeOrder.ToShortDateString().ToString());
+                }
+                return listOrders;
+            }
+        }
+        public List<string> SelectOrdersByName(string personName)
         {
             List<string> listOrders = new List<string>();
             using( var db = new VideoClubDbContext())
             {
                 var orders = db.Orders
-                    .Where(o => o.PersonId == 1)
+                    .Where(o => o.Person.Name == personName)
                     .Select(e => new
                     {
                         OrdersNumber = e.Id,
@@ -57,6 +83,28 @@ namespace VideoClub.Repository
                 db.Orders.Remove(order);
                 db.SaveChanges();
                 return "Заявката беше истрита.";
+            }
+        }
+
+        public bool MovieHasOrders(int number)
+        {
+            using(var db = new VideoClubDbContext())
+            {
+                var hasOrder = db.Orders
+                    .Where(o => o.MovieId == number)
+                    .Any();
+                return hasOrder;
+            }
+        }
+
+        public bool PersonHasOrders(string personName)
+        {
+            using(var db = new VideoClubDbContext())
+            {
+                var hasOrder = db.Orders
+                    .Where(o => o.Person.Name == personName)
+                    .Any();
+                return hasOrder;
             }
         }
     }

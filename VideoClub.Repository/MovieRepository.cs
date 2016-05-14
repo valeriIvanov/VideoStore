@@ -90,13 +90,12 @@
             {
                 var movie = db.Movies
                     .Where(m => m.Name == movieName)
-                    .FirstOrDefault();
+                    .First();
+
                 db.Movies.Remove(movie);
-                if(movie.Id != null)
-                {
-                    return true;
-                }
-                else { return false; }
+                db.SaveChanges();
+                return true;
+                
             }
         }
 

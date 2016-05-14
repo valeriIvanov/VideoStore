@@ -54,7 +54,7 @@ namespace Startup
 
         private void buttonDeleteMovie_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(logic.DeleteMovie(textBoxMovieName.Text.ToString()));
+            MessageBox.Show(logic.DeleteMovie(textBoxMovieID.Text.ToString(), textBoxMovieName.Text.ToString()));
             textBoxMovieName.Text = "";
             SelectMovie(true);
         }
@@ -66,8 +66,8 @@ namespace Startup
         }
 
         private void GetOrdersList()
-        {           
-            var listOrders = logic.OrdersDataGrid();
+        {
+            var listOrders = logic.PersonOrders(false, textBoxOderPersonName.Text.ToString());
             dataGridViewОverdueOrders.DataSource = listOrders;
         }
 
@@ -136,9 +136,21 @@ namespace Startup
             }
         }
 
+        private void KeyPresOnlyNumberAndDots(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar < '0' || e.KeyChar > '9') && (e.KeyChar != '\b') && (e.KeyChar != ','))
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                e.Handled = false;
+            }
+        }
+
         private void textBoxPrice_KeyPress(object sender, KeyPressEventArgs e)
         {
-            KeyPresOnlyNumber(sender, e);
+            KeyPresOnlyNumberAndDots(sender, e);
         }
 
         private void textBoxQuantity_KeyPress(object sender, KeyPressEventArgs e)
@@ -178,5 +190,13 @@ namespace Startup
             dataGridViewPerson.DataSource = personList;
             this.dataGridViewPerson.Columns[0].Visible = false;
         }
+
+        private void buttonSechOrderByPersonName_Click(object sender, EventArgs e)
+        {
+            var orderList = logic.PersonOrders(true, textBoxOderPersonName.Text.ToString());
+            dataGridViewОverdueOrders.DataSource = orderList;
+        }
+
+
     }
 }

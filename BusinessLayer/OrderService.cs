@@ -52,9 +52,14 @@ namespace BusinessLayer
             return orderRepository.DeleteOrder(number);
         }
 
-        public List<string> ListOrders()
+        public List<string> SelectAllOrders()
         {
-            return orderRepository.SelectOrders();
+            return orderRepository.SelectAllOrders();
+        }
+
+        public List<string> ListOrdersByName(string personName)
+        {
+            return orderRepository.SelectOrdersByName(personName);
         }
 
     }

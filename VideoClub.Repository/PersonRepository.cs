@@ -17,10 +17,13 @@
             {
                 var person = db.Persons
                     .Where(p => p.Name == personName)
-                    .FirstOrDefault();
-                personList.Add(person.Id.ToString());
-                personList.Add(person.Name.ToString());
-                personList.Add(person.BornYear.ToString());
+                    .ToList();
+                foreach (var subject in person)
+                {
+                    personList.Add(subject.Id.ToString());
+                    personList.Add(subject.Name.ToString());
+                    personList.Add(subject.BornYear.ToString());
+                }
                 return personList;
             }
         }
@@ -43,11 +46,8 @@
                     .Where(p => p.Name == personName)
                     .First();
                 db.Persons.Remove(person);
-                if(person.Id !=0)
-                {
-                    return true;
-                }
-                else { return false; }
+                db.SaveChanges();
+                return true;
             }
         }
 

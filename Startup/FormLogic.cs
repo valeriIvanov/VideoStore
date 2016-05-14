@@ -49,14 +49,20 @@ namespace Startup
             return dataTable;
         }
 
-        public DataTable OrdersDataGrid()
+        public DataTable PersonOrders(bool sortByName, string personName)
         {
             var dataTable = new DataTable();
             dataTable.Columns.Add("Заявка N:");
             dataTable.Columns.Add("Име на клиент");
             dataTable.Columns.Add("Филм");
             dataTable.Columns.Add("Дата на взимане");
-            List<string> list = order.ListOrders();
+
+            List<string> list = new List<string>();
+            if (sortByName == true)
+            {
+                list = order.ListOrdersByName(personName);
+            }
+            else { list = order.SelectAllOrders(); }
 
             for (int index = 0; index < list.Count; index +=4)
             {
@@ -95,9 +101,9 @@ namespace Startup
             return movie.AddMovie(name, director, genre, quantity, price, adult);
         }
 
-        public string DeleteMovie(string name)
+        public string DeleteMovie(string movieID, string movieName)
         {
-            return movie.DeleteMovie(name);
+            return movie.DeleteMovie(movieID, movieName);
         }
 
         public string AddOrder(string movieName, string personName)

@@ -74,7 +74,7 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.textBoxOderPersonName = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.buttonSechPerson = new System.Windows.Forms.Button();
+            this.buttonSechOrderByPersonName = new System.Windows.Forms.Button();
             this.buttonInsertOrder = new System.Windows.Forms.Button();
             this.textBoxOrderMovieName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -533,7 +533,7 @@
             // 
             this.groupBox3.Controls.Add(this.textBoxOderPersonName);
             this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Controls.Add(this.buttonSechPerson);
+            this.groupBox3.Controls.Add(this.buttonSechOrderByPersonName);
             this.groupBox3.Controls.Add(this.buttonInsertOrder);
             this.groupBox3.Controls.Add(this.textBoxOrderMovieName);
             this.groupBox3.Controls.Add(this.label2);
@@ -560,14 +560,15 @@
             this.label7.TabIndex = 18;
             this.label7.Text = "Клиент";
             // 
-            // buttonSechPerson
+            // buttonSechOrderByPersonName
             // 
-            this.buttonSechPerson.Location = new System.Drawing.Point(181, 114);
-            this.buttonSechPerson.Name = "buttonSechPerson";
-            this.buttonSechPerson.Size = new System.Drawing.Size(75, 23);
-            this.buttonSechPerson.TabIndex = 4;
-            this.buttonSechPerson.Text = "Търси име";
-            this.buttonSechPerson.UseVisualStyleBackColor = true;
+            this.buttonSechOrderByPersonName.Location = new System.Drawing.Point(181, 114);
+            this.buttonSechOrderByPersonName.Name = "buttonSechOrderByPersonName";
+            this.buttonSechOrderByPersonName.Size = new System.Drawing.Size(75, 23);
+            this.buttonSechOrderByPersonName.TabIndex = 4;
+            this.buttonSechOrderByPersonName.Text = "Търси име";
+            this.buttonSechOrderByPersonName.UseVisualStyleBackColor = true;
+            this.buttonSechOrderByPersonName.Click += new System.EventHandler(this.buttonSechOrderByPersonName_Click);
             // 
             // buttonInsertOrder
             // 
@@ -678,7 +679,7 @@
         private System.Windows.Forms.TabPage tabPageRequest;
         private System.Windows.Forms.DataGridView dataGridViewОverdueOrders;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button buttonSechPerson;
+        private System.Windows.Forms.Button buttonSechOrderByPersonName;
         private System.Windows.Forms.Button buttonInsertOrder;
         private System.Windows.Forms.TextBox textBoxOrderMovieName;
         private System.Windows.Forms.Label label2;

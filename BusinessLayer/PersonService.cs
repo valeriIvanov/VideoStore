@@ -11,6 +11,7 @@
     public class PersonService
     {
         PersonRepository personRepository = new PersonRepository();
+        OrderRepository orderRepository = new OrderRepository();
 
         public string AddPerson(string personName, string bornYear)
         {
@@ -43,8 +44,9 @@
         {
             if(personRepository.HasPerson(personName) == true)
             {
-                if (personRepository.DeletePerson(personName) == true)
+                if (orderRepository.PersonHasOrders(personName) == false)
                 {
+                    personRepository.DeletePerson(personName);
                     return "Клиента е изтрит.";
                 }
                 else { return "Клиента не е изтрит. Възможно е да има направени поръчки."; }
