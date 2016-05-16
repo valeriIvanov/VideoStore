@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VideoClub.Data;
-using VideoClub.Models;
-
+﻿
 namespace VideoClub.Repository
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    using VideoClub.Models;
+
     public class OrderRepository
     {
         public List<string> SelectAllOrders()

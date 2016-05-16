@@ -11,14 +11,14 @@ namespace Startup
 {
     public class FormLogic
     {
-        PersonService person = new PersonService();
-        MovieService movie = new MovieService();
-        OrderService order = new OrderService();
-        GenreService genre = new GenreService();
+        private PersonService personService = new PersonService();
+        private MovieService movieService = new MovieService();
+        private OrderService orderService = new OrderService();
+        private GenreService genreService = new GenreService();
 
         public string[] GenreNames()
         {
-            return genre.GetGenreName();
+            return genreService.GetGenreName();
         }
 
         public DataTable SelectMovies(bool allmovie, string movieName)
@@ -34,11 +34,11 @@ namespace Startup
             List<string> movieList = new List<string>();
             if (allmovie == true)
             {
-                movieList = movie.SelectAllMovie();
+                movieList = movieService.SelectAllMovie();
             }
             else
             {
-                movieList = movie.SelectMovieByName(movieName);
+                movieList = movieService.SelectMovieByName(movieName);
             }
 
             for (int index = 0; index < movieList.Count ; index +=6)
@@ -60,9 +60,9 @@ namespace Startup
             List<string> list = new List<string>();
             if (sortByName == true)
             {
-                list = order.ListOrdersByName(personName);
+                list = orderService.ListOrdersByName(personName);
             }
-            else { list = order.SelectAllOrders(); }
+            else { list = orderService.SelectAllOrders(); }
 
             for (int index = 0; index < list.Count; index +=4)
             {
@@ -73,12 +73,12 @@ namespace Startup
 
         public string AddPerson(string name, string bornYear)
         {
-            return person.AddPerson(name, bornYear);
+            return personService.AddPerson(name, bornYear);
         }
 
         public string DeletePerson(string personName)
         {
-            return person.DeletePerson(personName);
+            return personService.DeletePerson(personName);
         }
 
         public DataTable SelectPerson(string personName)
@@ -88,7 +88,7 @@ namespace Startup
             dataTable.Columns.Add("Име");
             dataTable.Columns.Add("Година на Раждане");
 
-            List<string> personList = person.SelectPerson(personName);
+            List<string> personList = personService.SelectPerson(personName);
             for(int index = 0 ; index < personList.Count; index +=3)
             {
                 dataTable.Rows.Add(personList[index], personList[index + 1], personList[index + 2]);
@@ -98,22 +98,22 @@ namespace Startup
 
         public string AddMovie(string name, string director, string genre, string quantity, string price, bool adult)
         {
-            return movie.AddMovie(name, director, genre, quantity, price, adult);
+            return movieService.AddMovie(name, director, genre, quantity, price, adult);
         }
 
         public string DeleteMovie(string movieID, string movieName)
         {
-            return movie.DeleteMovie(movieID, movieName);
+            return movieService.DeleteMovie(movieID, movieName);
         }
 
         public string AddOrder(string movieName, string personName)
         {
-            return order.MakeOrder(movieName, personName);
+            return orderService.MakeOrder(movieName, personName);
         }
 
         public string DeleteOrder(string orderNumber)
         {
-            return order.DeleteOrder(orderNumber);
+            return orderService.DeleteOrder(orderNumber);
         }
     }
 }

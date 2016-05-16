@@ -10,16 +10,14 @@
 
     public class GenreService
     {
-        GenreRepository genreRepository = new GenreRepository();
+        private GenreRepository genreRepository = new GenreRepository();
 
         public GenreEntity AddGenre(string genre)
         {
-
             int genreName = GetGenreNumber(genre);
             var genres = new GenreEntity()
             {
                 Name = (GenreName)genreName
-
             };
 
             if (genreRepository.HasGenre(genre) == false)

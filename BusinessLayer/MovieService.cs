@@ -11,9 +11,9 @@ namespace BusinessLayer
 
     public class MovieService
     {
-        MovieRepository movieRepository = new MovieRepository();
-        GenreService genreService = new GenreService();
-        OrderRepository orderRepository = new OrderRepository();
+        private MovieRepository movieRepository = new MovieRepository();
+        private GenreService genreService = new GenreService();
+        private OrderRepository orderRepository = new OrderRepository();
 
         public string AddMovie(string name, string director, string genre, string quantity, string price, bool adult)
         {

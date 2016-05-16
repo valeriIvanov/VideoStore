@@ -10,8 +10,8 @@
 
     public class PersonService
     {
-        PersonRepository personRepository = new PersonRepository();
-        OrderRepository orderRepository = new OrderRepository();
+        private PersonRepository personRepository = new PersonRepository();
+        private OrderRepository orderRepository = new OrderRepository();
 
         public string AddPerson(string personName, string bornYear)
         {

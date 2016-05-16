@@ -5,13 +5,11 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DAL", "DAL", "{F6A43D15-8DDC-4785-ACE8-59B2B3D3DFA7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoClub.Data", "VideoClub.Data\VideoClub.Data.csproj", "{DC3BFE34-B8B2-4AAA-9B36-9EA88C4A912D}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoClub.Model", "VideoClub.Model\VideoClub.Model.csproj", "{B6402E9B-6AAE-44EF-A43C-A7AFF997C191}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "VideoClub.WindowsForm", "VideoClub.WindowsForm", "{F1BDD01E-FC30-4CFE-A842-B98B54AEF91B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Startup", "Startup\Startup.csproj", "{DF8C5941-880C-4D14-B679-7C4A79F2F893}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoClub.PresentationLayer", "Startup\VideoClub.PresentationLayer.csproj", "{DF8C5941-880C-4D14-B679-7C4A79F2F893}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoClub.Repository", "VideoClub.Repository\VideoClub.Repository.csproj", "{5E019782-BA8B-4BA2-ACF9-8EC4EA9F2BC6}"
 EndProject
@@ -23,10 +21,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DC3BFE34-B8B2-4AAA-9B36-9EA88C4A912D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DC3BFE34-B8B2-4AAA-9B36-9EA88C4A912D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DC3BFE34-B8B2-4AAA-9B36-9EA88C4A912D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DC3BFE34-B8B2-4AAA-9B36-9EA88C4A912D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B6402E9B-6AAE-44EF-A43C-A7AFF997C191}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B6402E9B-6AAE-44EF-A43C-A7AFF997C191}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6402E9B-6AAE-44EF-A43C-A7AFF997C191}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -48,7 +42,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{DC3BFE34-B8B2-4AAA-9B36-9EA88C4A912D} = {F6A43D15-8DDC-4785-ACE8-59B2B3D3DFA7}
 		{B6402E9B-6AAE-44EF-A43C-A7AFF997C191} = {F6A43D15-8DDC-4785-ACE8-59B2B3D3DFA7}
 		{5E019782-BA8B-4BA2-ACF9-8EC4EA9F2BC6} = {F6A43D15-8DDC-4785-ACE8-59B2B3D3DFA7}
 		{DF8C5941-880C-4D14-B679-7C4A79F2F893} = {F1BDD01E-FC30-4CFE-A842-B98B54AEF91B}

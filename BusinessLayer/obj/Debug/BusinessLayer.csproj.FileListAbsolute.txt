@@ -2,11 +2,9 @@ D:\VideoClub\BusinessLayer\bin\Debug\BusinessLayer.dll
 D:\VideoClub\BusinessLayer\bin\Debug\BusinessLayer.pdb
 D:\VideoClub\BusinessLayer\bin\Debug\VideoClub.Model.dll
 D:\VideoClub\BusinessLayer\bin\Debug\VideoClub.Repository.dll
-D:\VideoClub\BusinessLayer\bin\Debug\VideoClub.Data.dll
 D:\VideoClub\BusinessLayer\bin\Debug\EntityFramework.dll
 D:\VideoClub\BusinessLayer\bin\Debug\VideoClub.Model.pdb
 D:\VideoClub\BusinessLayer\bin\Debug\VideoClub.Repository.pdb
-D:\VideoClub\BusinessLayer\bin\Debug\VideoClub.Data.pdb
 D:\VideoClub\BusinessLayer\bin\Debug\EntityFramework.xml
 D:\VideoClub\BusinessLayer\obj\Debug\BusinessLayer.csprojResolveAssemblyReference.cache
 D:\VideoClub\BusinessLayer\obj\Debug\BusinessLayer.dll

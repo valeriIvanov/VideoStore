@@ -6,7 +6,6 @@
     using System.Text;
     using System.Threading.Tasks;
     using VideoClub.Models;
-    using VideoClub.Data;
 
     public class PersonRepository
     {

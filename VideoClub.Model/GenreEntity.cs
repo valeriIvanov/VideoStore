@@ -1,9 +1,8 @@
-﻿
-namespace VideoClub.Models
+﻿namespace VideoClub.Models
 {
     using System;
     using System.Collections.Generic;
-    //    using System.ComponentModel.DataAnnotations;
+    //using System.ComponentModel.DataAnnotations;
 
     public class GenreEntity
     {
@@ -13,7 +12,7 @@ namespace VideoClub.Models
 
         public int Id { get; set; }
 
-        //        [Required(ErrorMessage = "Не сте въвели име на жанра!")]
+        //[Required(ErrorMessage = "Не сте въвели име на жанра!")]
         public GenreName Name { get; set; }
     }
 }

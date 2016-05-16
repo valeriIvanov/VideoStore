@@ -12,7 +12,7 @@ namespace Startup
 {
     public partial class FormVideoClub : Form
     {
-        FormLogic logic = new FormLogic();
+        private FormLogic logic = new FormLogic();
         public FormVideoClub()
         {
             InitializeComponent();

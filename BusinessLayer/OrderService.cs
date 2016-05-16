@@ -10,9 +10,9 @@ namespace BusinessLayer
 {
     public class OrderService
     {
-        OrderRepository orderRepository = new OrderRepository();
-        MovieRepository movieRepository = new MovieRepository();
-        PersonRepository personRepository = new PersonRepository();
+        private OrderRepository orderRepository = new OrderRepository();
+        private MovieRepository movieRepository = new MovieRepository();
+        private PersonRepository personRepository = new PersonRepository();
 
         public string MakeOrder(string movieName, string personName)
         {
