@@ -42,7 +42,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxMovieName = new System.Windows.Forms.TextBox();
             this.labelMovieName = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.checkBoxAdult = new System.Windows.Forms.CheckBox();
@@ -51,7 +50,6 @@
             this.buttonDeleteMovie = new System.Windows.Forms.Button();
             this.textBoxDirector = new System.Windows.Forms.TextBox();
             this.textBoxPrice = new System.Windows.Forms.TextBox();
-            this.textBoxQuantity = new System.Windows.Forms.TextBox();
             this.tabPageCustomer = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.buttonSerchPerson = new System.Windows.Forms.Button();
@@ -79,6 +77,7 @@
             this.textBoxOrderMovieName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridViewОverdueOrders = new System.Windows.Forms.DataGridView();
+            this.buttonAllOrders = new System.Windows.Forms.Button();
             this.tabControlVideoClub.SuspendLayout();
             this.tabPageMovies.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -192,7 +191,6 @@
             this.groupBoxMovies.Controls.Add(this.label3);
             this.groupBoxMovies.Controls.Add(this.textBoxMovieName);
             this.groupBoxMovies.Controls.Add(this.labelMovieName);
-            this.groupBoxMovies.Controls.Add(this.label1);
             this.groupBoxMovies.Controls.Add(this.label4);
             this.groupBoxMovies.Controls.Add(this.label5);
             this.groupBoxMovies.Controls.Add(this.checkBoxAdult);
@@ -201,7 +199,6 @@
             this.groupBoxMovies.Controls.Add(this.buttonDeleteMovie);
             this.groupBoxMovies.Controls.Add(this.textBoxDirector);
             this.groupBoxMovies.Controls.Add(this.textBoxPrice);
-            this.groupBoxMovies.Controls.Add(this.textBoxQuantity);
             this.groupBoxMovies.Location = new System.Drawing.Point(25, 100);
             this.groupBoxMovies.Name = "groupBoxMovies";
             this.groupBoxMovies.Size = new System.Drawing.Size(380, 262);
@@ -211,7 +208,7 @@
             // 
             // textBoxMovieID
             // 
-            this.textBoxMovieID.Location = new System.Drawing.Point(327, 19);
+            this.textBoxMovieID.Location = new System.Drawing.Point(327, 40);
             this.textBoxMovieID.Name = "textBoxMovieID";
             this.textBoxMovieID.Size = new System.Drawing.Size(39, 20);
             this.textBoxMovieID.TabIndex = 18;
@@ -221,7 +218,7 @@
             // comboBoxGenre
             // 
             this.comboBoxGenre.FormattingEnabled = true;
-            this.comboBoxGenre.Location = new System.Drawing.Point(112, 99);
+            this.comboBoxGenre.Location = new System.Drawing.Point(112, 120);
             this.comboBoxGenre.Name = "comboBoxGenre";
             this.comboBoxGenre.Size = new System.Drawing.Size(208, 21);
             this.comboBoxGenre.TabIndex = 3;
@@ -229,7 +226,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(48, 62);
+            this.label3.Location = new System.Drawing.Point(48, 83);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 13);
             this.label3.TabIndex = 3;
@@ -237,7 +234,7 @@
             // 
             // textBoxMovieName
             // 
-            this.textBoxMovieName.Location = new System.Drawing.Point(112, 19);
+            this.textBoxMovieName.Location = new System.Drawing.Point(112, 40);
             this.textBoxMovieName.Name = "textBoxMovieName";
             this.textBoxMovieName.Size = new System.Drawing.Size(209, 20);
             this.textBoxMovieName.TabIndex = 1;
@@ -245,25 +242,16 @@
             // labelMovieName
             // 
             this.labelMovieName.AutoSize = true;
-            this.labelMovieName.Location = new System.Drawing.Point(77, 22);
+            this.labelMovieName.Location = new System.Drawing.Point(77, 43);
             this.labelMovieName.Name = "labelMovieName";
             this.labelMovieName.Size = new System.Drawing.Size(29, 13);
             this.labelMovieName.TabIndex = 0;
             this.labelMovieName.Text = "Име";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(44, 142);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Наличност";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(72, 184);
+            this.label4.Location = new System.Drawing.Point(72, 164);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(33, 13);
             this.label4.TabIndex = 4;
@@ -272,7 +260,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(69, 102);
+            this.label5.Location = new System.Drawing.Point(69, 123);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(36, 13);
             this.label5.TabIndex = 5;
@@ -281,7 +269,7 @@
             // checkBoxAdult
             // 
             this.checkBoxAdult.AutoSize = true;
-            this.checkBoxAdult.Location = new System.Drawing.Point(224, 184);
+            this.checkBoxAdult.Location = new System.Drawing.Point(224, 164);
             this.checkBoxAdult.Name = "checkBoxAdult";
             this.checkBoxAdult.Size = new System.Drawing.Size(96, 17);
             this.checkBoxAdult.TabIndex = 6;
@@ -290,7 +278,7 @@
             // 
             // buttonUpdateMovie
             // 
-            this.buttonUpdateMovie.Location = new System.Drawing.Point(149, 219);
+            this.buttonUpdateMovie.Location = new System.Drawing.Point(149, 199);
             this.buttonUpdateMovie.Name = "buttonUpdateMovie";
             this.buttonUpdateMovie.Size = new System.Drawing.Size(75, 23);
             this.buttonUpdateMovie.TabIndex = 8;
@@ -300,7 +288,7 @@
             // 
             // buttonInsertMovie
             // 
-            this.buttonInsertMovie.Location = new System.Drawing.Point(34, 219);
+            this.buttonInsertMovie.Location = new System.Drawing.Point(34, 199);
             this.buttonInsertMovie.Name = "buttonInsertMovie";
             this.buttonInsertMovie.Size = new System.Drawing.Size(75, 23);
             this.buttonInsertMovie.TabIndex = 7;
@@ -310,7 +298,7 @@
             // 
             // buttonDeleteMovie
             // 
-            this.buttonDeleteMovie.Location = new System.Drawing.Point(264, 219);
+            this.buttonDeleteMovie.Location = new System.Drawing.Point(264, 199);
             this.buttonDeleteMovie.Name = "buttonDeleteMovie";
             this.buttonDeleteMovie.Size = new System.Drawing.Size(75, 23);
             this.buttonDeleteMovie.TabIndex = 10;
@@ -320,26 +308,18 @@
             // 
             // textBoxDirector
             // 
-            this.textBoxDirector.Location = new System.Drawing.Point(112, 59);
+            this.textBoxDirector.Location = new System.Drawing.Point(112, 80);
             this.textBoxDirector.Name = "textBoxDirector";
             this.textBoxDirector.Size = new System.Drawing.Size(209, 20);
             this.textBoxDirector.TabIndex = 2;
             // 
             // textBoxPrice
             // 
-            this.textBoxPrice.Location = new System.Drawing.Point(112, 181);
+            this.textBoxPrice.Location = new System.Drawing.Point(112, 161);
             this.textBoxPrice.Name = "textBoxPrice";
             this.textBoxPrice.Size = new System.Drawing.Size(88, 20);
             this.textBoxPrice.TabIndex = 5;
             this.textBoxPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPrice_KeyPress);
-            // 
-            // textBoxQuantity
-            // 
-            this.textBoxQuantity.Location = new System.Drawing.Point(111, 139);
-            this.textBoxQuantity.Name = "textBoxQuantity";
-            this.textBoxQuantity.Size = new System.Drawing.Size(209, 20);
-            this.textBoxQuantity.TabIndex = 4;
-            this.textBoxQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxQuantity_KeyPress);
             // 
             // tabPageCustomer
             // 
@@ -415,6 +395,7 @@
             this.textBoxPersonID.Size = new System.Drawing.Size(14, 20);
             this.textBoxPersonID.TabIndex = 7;
             this.textBoxPersonID.TabStop = false;
+            this.textBoxPersonID.Visible = false;
             // 
             // labelPeopleName
             // 
@@ -482,6 +463,7 @@
             // tabPageRequest
             // 
             this.tabPageRequest.BackColor = System.Drawing.Color.Goldenrod;
+            this.tabPageRequest.Controls.Add(this.buttonAllOrders);
             this.tabPageRequest.Controls.Add(this.groupBox4);
             this.tabPageRequest.Controls.Add(this.groupBox3);
             this.tabPageRequest.Controls.Add(this.dataGridViewОverdueOrders);
@@ -603,11 +585,21 @@
             this.dataGridViewОverdueOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewОverdueOrders.Location = new System.Drawing.Point(405, 22);
             this.dataGridViewОverdueOrders.Name = "dataGridViewОverdueOrders";
-            this.dataGridViewОverdueOrders.Size = new System.Drawing.Size(729, 418);
+            this.dataGridViewОverdueOrders.Size = new System.Drawing.Size(729, 394);
             this.dataGridViewОverdueOrders.TabIndex = 9;
             this.dataGridViewОverdueOrders.TabStop = false;
             this.dataGridViewОverdueOrders.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewОverdueOrders_CellClick);
             this.dataGridViewОverdueOrders.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewОverdueOrders_DataBindingComplete);
+            // 
+            // buttonAllOrders
+            // 
+            this.buttonAllOrders.Location = new System.Drawing.Point(734, 431);
+            this.buttonAllOrders.Name = "buttonAllOrders";
+            this.buttonAllOrders.Size = new System.Drawing.Size(92, 24);
+            this.buttonAllOrders.TabIndex = 20;
+            this.buttonAllOrders.Text = "Всички заявки";
+            this.buttonAllOrders.UseVisualStyleBackColor = true;
+            this.buttonAllOrders.Click += new System.EventHandler(this.buttonAllOrders_Click);
             // 
             // FormVideoClub
             // 
@@ -654,7 +646,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxMovieName;
         private System.Windows.Forms.Label labelMovieName;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.CheckBox checkBoxAdult;
@@ -663,7 +654,6 @@
         private System.Windows.Forms.Button buttonDeleteMovie;
         private System.Windows.Forms.TextBox textBoxDirector;
         private System.Windows.Forms.TextBox textBoxPrice;
-        private System.Windows.Forms.TextBox textBoxQuantity;
         private System.Windows.Forms.TabPage tabPageCustomer;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button buttonSerchPerson;
@@ -693,6 +683,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBoxMovieID;
         private System.Windows.Forms.TextBox textBoxPersonID;
+        private System.Windows.Forms.Button buttonAllOrders;
     }
 }
 

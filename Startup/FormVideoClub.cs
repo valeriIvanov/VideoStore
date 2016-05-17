@@ -25,6 +25,9 @@ namespace Startup
         private void buttonInsertOrder_Click(object sender, EventArgs e)
         {
             MessageBox.Show(logic.AddOrder(textBoxOrderMovieName.Text.ToString(), textBoxOderPersonName.Text.ToString()));
+            GetOrdersList();
+            textBoxOrderMovieName.Text = "";
+            textBoxOderPersonName.Text = "";
         }
 
         private void buttonInsertPerson_Click(object sender, EventArgs e)
@@ -43,7 +46,7 @@ namespace Startup
             }
             else { adult = false; };
             MessageBox.Show(logic.AddMovie(textBoxMovieName.Text.ToString(), textBoxDirector.Text.ToString(),
-                comboBoxGenre.Text.ToString(), textBoxQuantity.Text.ToString(), textBoxPrice.Text.ToString(), adult));
+                comboBoxGenre.Text.ToString(), textBoxPrice.Text.ToString(), adult));
             SelectMovie(true);
         }
 
@@ -67,7 +70,7 @@ namespace Startup
 
         private void GetOrdersList()
         {
-            var listOrders = logic.PersonOrders(false, textBoxOderPersonName.Text.ToString());
+            var listOrders = logic.SelectOrders(false, textBoxOderPersonName.Text.ToString());
             dataGridViewОverdueOrders.DataSource = listOrders;
         }
 
@@ -198,7 +201,7 @@ namespace Startup
 
         private void buttonSechOrderByPersonName_Click(object sender, EventArgs e)
         {
-            var orderList = logic.PersonOrders(true, textBoxOderPersonName.Text.ToString());
+            var orderList = logic.SelectOrders(true, textBoxOderPersonName.Text.ToString());
             dataGridViewОverdueOrders.DataSource = orderList;
         }
 
@@ -210,7 +213,7 @@ namespace Startup
                 adult = true;
             }
             else { adult = false; };
-            MessageBox.Show(logic.UpdateMovie(textBoxMovieID.Text.ToString(), textBoxMovieName.Text.ToString(), textBoxDirector.Text.ToString(), comboBoxGenre.Text.ToString(), textBoxQuantity.Text.ToString(), textBoxPrice.Text.ToString(), adult));
+            MessageBox.Show(logic.UpdateMovie(textBoxMovieID.Text.ToString(), textBoxMovieName.Text.ToString(), textBoxDirector.Text.ToString(), comboBoxGenre.Text.ToString(), textBoxPrice.Text.ToString(), adult));
             textBoxMovieID.Text = "";
             SelectMovie(true);
         }
@@ -222,6 +225,12 @@ namespace Startup
             textBoxPersonName.Text = "";
             textBoxPersonYear.Text = "";
             textBoxPersonID.Text = "";
+        }
+
+        private void buttonAllOrders_Click(object sender, EventArgs e)
+        {
+            GetOrdersList();
+
         }
 
 

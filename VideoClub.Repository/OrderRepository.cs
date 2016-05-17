@@ -17,6 +17,7 @@ namespace VideoClub.Repository
             {
                 var orders = db.Orders
                     .Where(o => o.Person.Name != null)
+                    .OrderBy(o => o.GetDate)
                     .Select(e => new
                     {
                         OrdersNumber = e.Id,
@@ -36,6 +37,7 @@ namespace VideoClub.Repository
                 return listOrders;
             }
         }
+
         public List<string> SelectOrdersByName(string personName)
         {
             List<string> listOrders = new List<string>();

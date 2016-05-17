@@ -15,12 +15,10 @@ namespace BusinessLayer
         private GenreService genreService = new GenreService();
         private OrderRepository orderRepository = new OrderRepository();
 
-        public string AddMovie(string name, string director, string genre, string quantity, string price, bool adult)
+        public string AddMovie(string name, string director, string genre, string price, bool adult)
         {
-            if (name != "" & director != "" & genre != "" & quantity != "" & price != "")
+            if (name != "" & director != "" & genre != "" & price != "")
             {
-
-                int movieQuantity = Int32.Parse(quantity);
                 decimal moviePrice = Convert.ToDecimal(price);
                 var genreEntity = genreService.AddGenre(genre);
                 var movie = new MovieEntity()
@@ -29,8 +27,6 @@ namespace BusinessLayer
                     Name = name,
                     DirectorName = director,
                     Price = moviePrice,
-                    Quantity = movieQuantity,
-                    CurrentQuantity = movieQuantity,
                     Adult = adult,               
                 };
                 if (movieRepository.HasMovie(name) == false)
@@ -47,12 +43,11 @@ namespace BusinessLayer
             else { return "Имате непопълнени полета"; }
         }
 
-        public string UpdateMovie(string movieID, string name, string director, string genre, string quantity, string price, bool adult)
+        public string UpdateMovie(string movieID, string name, string director, string genre, string price, bool adult)
         {
-            if (movieID != "" & name != "" & director != "" & genre != "" & quantity != "" & price != "")
+            if (movieID != "" & name != "" & director != "" & genre != "" & price != "")
             {
                 int id = Int32.Parse(movieID);
-                int movieQuantity = Int32.Parse(quantity);
                 decimal moviePrice = Convert.ToDecimal(price);
                 var genreEntity = genreService.AddGenre(genre);
                 var movie = new MovieEntity()
@@ -62,8 +57,6 @@ namespace BusinessLayer
                     Name = name,
                     DirectorName = director,
                     Price = moviePrice,
-                    Quantity = movieQuantity,
-                    CurrentQuantity = movieQuantity,
                     Adult = adult,
                 };
                 if (movieRepository.HasMovieByNameAndOtherId(movie) == false)

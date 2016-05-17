@@ -22,7 +22,6 @@
                         ID = m.Id,
                         MovieName = m.Name,
                         Genre = m.Genre.Name,
-                        Quantity = m.Quantity,
                         Price = m.Price,
                         Adult = m.Adult,
                     })
@@ -32,7 +31,6 @@
                     movieList.Add(movie.ID.ToString());
                     movieList.Add(movie.MovieName.ToString());
                     movieList.Add(movie.Genre.ToString());
-                    movieList.Add(movie.Quantity.ToString()); 
                     movieList.Add(movie.Price.ToString());
                     movieList.Add(movie.Adult.ToString());                   
                 }
@@ -51,7 +49,6 @@
                         ID = m.Id,
                         MovieName = m.Name,
                         Genre = m.Genre.Name,
-                        Quantity = m.Quantity,
                         Price = m.Price,
                         Adult = m.Adult
                     })
@@ -63,7 +60,6 @@
                     movieList.Add(movie.ID.ToString());
                     movieList.Add(movie.MovieName.ToString());
                     movieList.Add(movie.Genre.ToString());
-                    movieList.Add(movie.Quantity.ToString());
                     movieList.Add(movie.Price.ToString());
                     movieList.Add(movie.Adult.ToString());
                 }
@@ -81,10 +77,8 @@
                     .First();
                 updatedMovie.Name = movie.Name;
                 updatedMovie.Price = movie.Price;
-                updatedMovie.Quantity = movie.Quantity;
                 updatedMovie.GenreId = movie.GenreId;
                 updatedMovie.DirectorName = movie.DirectorName;
-                updatedMovie.CurrentQuantity = movie.CurrentQuantity;
                 updatedMovie.Adult = movie.Adult;
                 db.SaveChanges();
             };

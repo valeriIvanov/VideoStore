@@ -27,7 +27,6 @@ namespace Startup
             dataTable.Columns.Add("ID");
             dataTable.Columns.Add("Филм");
             dataTable.Columns.Add("Жанр");
-            dataTable.Columns.Add("Наличност");
             dataTable.Columns.Add("Цена");
             dataTable.Columns.Add("За възрастни");
 
@@ -41,15 +40,15 @@ namespace Startup
                 movieList = movieService.SelectMovieByName(movieName);
             }
 
-            for (int index = 0; index < movieList.Count ; index +=6)
+            for (int index = 0; index < movieList.Count ; index +=5)
             {
                 dataTable.Rows.Add(movieList[index], movieList[index + 1], movieList[index + 2], movieList[index + 3],
-                    movieList[index + 4], movieList[index + 5]);                
+                    movieList[index + 4]);                
             }
             return dataTable;
         }
 
-        public DataTable PersonOrders(bool sortByName, string personName)
+        public DataTable SelectOrders(bool sortByName, string personName)
         {
             var dataTable = new DataTable();
             dataTable.Columns.Add("Заявка N:");
@@ -101,15 +100,15 @@ namespace Startup
             return dataTable;
         }
 
-        public string AddMovie(string name, string director, string genre, string quantity, string price, bool adult)
+        public string AddMovie(string name, string director, string genre, string price, bool adult)
         {
-            return movieService.AddMovie(name, director, genre, quantity, price, adult);
+            return movieService.AddMovie(name, director, genre, price, adult);
         }
 
-        public string UpdateMovie(string movieID, string name, string director, string genre, string quantity, 
+        public string UpdateMovie(string movieID, string name, string director, string genre, 
                                     string price, bool adult)
         {
-            return movieService.UpdateMovie(movieID, name, director, genre, quantity, price, adult);
+            return movieService.UpdateMovie(movieID, name, director, genre, price, adult);
         }
 
         public string DeleteMovie(string movieID, string movieName)
