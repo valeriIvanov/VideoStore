@@ -76,6 +76,11 @@ namespace Startup
             return personService.AddPerson(name, bornYear);
         }
 
+        public string UpdatePerson(string personID, string personName, string personYear)
+        {
+            return personService.UpdatePerson(personID, personName, personYear);
+        }
+
         public string DeletePerson(string personName)
         {
             return personService.DeletePerson(personName);

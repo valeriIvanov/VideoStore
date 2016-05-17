@@ -37,6 +37,20 @@
             return true;
         }
 
+        public bool UpdatePerson(PersonEntity person)
+        {
+            using(var db = new VideoClubDbContext())
+            {
+                var updatedPerson = db.Persons
+                    .Where(p => p.Id == person.Id)
+                    .First();
+                updatedPerson.Name = person.Name;
+                updatedPerson.BornYear = person.BornYear;
+                db.SaveChanges();
+            }
+            return true;
+        }
+
         public bool DeletePerson(string personName)
         {
             using(var db = new VideoClubDbContext())
@@ -59,6 +73,18 @@
                     .Where(h => h.Name == name)
                     .Any();
                 return hasName;
+            }
+        }
+
+        public bool HasAnotherPersonByNameAndId(PersonEntity person)
+        {
+            using (var db = new VideoClubDbContext())
+            {
+
+                var hasPerson = db.Persons
+                    .Where(h => h.Name == person.Name & h.Id != person.Id)
+                    .Any();
+                return hasPerson;
             }
         }
 

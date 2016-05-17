@@ -15,7 +15,7 @@
 
         public string AddPerson(string personName, string bornYear)
         {
-            if (personName != null & bornYear != "")
+            if (personName != "" & bornYear != "")
             {
                 int year = int.Parse(bornYear);
                 var personEntity = new PersonEntity()
@@ -38,6 +38,31 @@
                 return "Имате непопълнини полета!";
             }
 
+        }
+
+        public string UpdatePerson(string personId, string personName, string bornYear)
+        {
+            if (personId != "" & personName != "" & bornYear != "")
+            {
+                int id = int.Parse(personId);
+                int year = int.Parse(bornYear);
+                var personEntity = new PersonEntity()
+                {
+                    Id = id,
+                    Name = personName,
+                    BornYear = year
+
+                };
+
+                if (personRepository.HasAnotherPersonByNameAndId(personEntity) == false)
+                {
+                    personRepository.UpdatePerson(personEntity);
+                    return "Клиентът е запазен";
+                }
+                else { return "Имате дублиращ се запис!"; }
+            }
+
+            else { return "Имате непопълнини полета!"; }            
         }
 
         public string DeletePerson(string personName)

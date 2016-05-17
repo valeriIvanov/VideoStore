@@ -415,7 +415,6 @@
             this.textBoxPersonID.Size = new System.Drawing.Size(14, 20);
             this.textBoxPersonID.TabIndex = 7;
             this.textBoxPersonID.TabStop = false;
-            this.textBoxPersonID.Visible = false;
             // 
             // labelPeopleName
             // 
@@ -453,6 +452,7 @@
             this.buttonUpdatePerson.TabIndex = 5;
             this.buttonUpdatePerson.Text = "Update";
             this.buttonUpdatePerson.UseVisualStyleBackColor = true;
+            this.buttonUpdatePerson.Click += new System.EventHandler(this.buttonUpdatePerson_Click);
             // 
             // textBoxPersonName
             // 

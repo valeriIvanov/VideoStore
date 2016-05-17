@@ -186,6 +186,11 @@ namespace Startup
 
         private void buttonSerchPerson_Click(object sender, EventArgs e)
         {
+            SerchPerson();
+        }
+
+        private void SerchPerson()
+        {
             var personList = logic.SelectPerson(textBoxPersonName.Text.ToString());
             dataGridViewPerson.DataSource = personList;
             this.dataGridViewPerson.Columns[0].Visible = false;
@@ -208,6 +213,15 @@ namespace Startup
             MessageBox.Show(logic.UpdateMovie(textBoxMovieID.Text.ToString(), textBoxMovieName.Text.ToString(), textBoxDirector.Text.ToString(), comboBoxGenre.Text.ToString(), textBoxQuantity.Text.ToString(), textBoxPrice.Text.ToString(), adult));
             textBoxMovieID.Text = "";
             SelectMovie(true);
+        }
+
+        private void buttonUpdatePerson_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(logic.UpdatePerson(textBoxPersonID.Text.ToString(), textBoxPersonName.Text.ToString(), textBoxPersonYear.Text.ToString()));
+            SerchPerson();
+            textBoxPersonName.Text = "";
+            textBoxPersonYear.Text = "";
+            textBoxPersonID.Text = "";
         }
 
 
