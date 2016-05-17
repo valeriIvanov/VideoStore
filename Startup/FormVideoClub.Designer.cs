@@ -296,6 +296,7 @@
             this.buttonUpdateMovie.TabIndex = 8;
             this.buttonUpdateMovie.Text = "Промени";
             this.buttonUpdateMovie.UseVisualStyleBackColor = true;
+            this.buttonUpdateMovie.Click += new System.EventHandler(this.buttonUpdateMovie_Click);
             // 
             // buttonInsertMovie
             // 

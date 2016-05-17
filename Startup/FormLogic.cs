@@ -101,6 +101,12 @@ namespace Startup
             return movieService.AddMovie(name, director, genre, quantity, price, adult);
         }
 
+        public string UpdateMovie(string movieID, string name, string director, string genre, string quantity, 
+                                    string price, bool adult)
+        {
+            return movieService.UpdateMovie(movieID, name, director, genre, quantity, price, adult);
+        }
+
         public string DeleteMovie(string movieID, string movieName)
         {
             return movieService.DeleteMovie(movieID, movieName);

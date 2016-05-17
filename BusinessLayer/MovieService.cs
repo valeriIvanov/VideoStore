@@ -17,7 +17,7 @@ namespace BusinessLayer
 
         public string AddMovie(string name, string director, string genre, string quantity, string price, bool adult)
         {
-            if(name != null & director != null & genre != null & quantity != null & price != null)
+            if (name != "" & director != "" & genre != "" & quantity != "" & price != "")
             {
 
                 int movieQuantity = Int32.Parse(quantity);
@@ -43,6 +43,39 @@ namespace BusinessLayer
                 }
                 else { return "Имате съвпадащ филм"; }
                 
+            }
+            else { return "Имате непопълнени полета"; }
+        }
+
+        public string UpdateMovie(string movieID, string name, string director, string genre, string quantity, string price, bool adult)
+        {
+            if (movieID != "" & name != "" & director != "" & genre != "" & quantity != "" & price != "")
+            {
+                int id = Int32.Parse(movieID);
+                int movieQuantity = Int32.Parse(quantity);
+                decimal moviePrice = Convert.ToDecimal(price);
+                var genreEntity = genreService.AddGenre(genre);
+                var movie = new MovieEntity()
+                {
+                    Id = id,
+                    GenreId = genreEntity.Id,
+                    Name = name,
+                    DirectorName = director,
+                    Price = moviePrice,
+                    Quantity = movieQuantity,
+                    CurrentQuantity = movieQuantity,
+                    Adult = adult,
+                };
+                if (movieRepository.HasMovieByNameAndOtherId(movie) == false)
+                {
+                    if (movieRepository.UpdateMovie(movie) == true)
+                    {
+                        return "Филма е редактиран!";
+                    }
+                    else { return "Филме не е редактиран."; }
+                }
+                else { return "Имате съвпадащ филм"; }
+
             }
             else { return "Имате непопълнени полета"; }
         }

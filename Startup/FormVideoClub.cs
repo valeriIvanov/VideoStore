@@ -197,6 +197,19 @@ namespace Startup
             dataGridViewОverdueOrders.DataSource = orderList;
         }
 
+        private void buttonUpdateMovie_Click(object sender, EventArgs e)
+        {
+            bool adult;
+            if (checkBoxAdult.Checked)
+            {
+                adult = true;
+            }
+            else { adult = false; };
+            MessageBox.Show(logic.UpdateMovie(textBoxMovieID.Text.ToString(), textBoxMovieName.Text.ToString(), textBoxDirector.Text.ToString(), comboBoxGenre.Text.ToString(), textBoxQuantity.Text.ToString(), textBoxPrice.Text.ToString(), adult));
+            textBoxMovieID.Text = "";
+            SelectMovie(true);
+        }
+
 
     }
 }

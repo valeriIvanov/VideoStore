@@ -72,6 +72,25 @@
 
         }
 
+        public bool UpdateMovie(MovieEntity movie)
+        {
+            using(var db = new VideoClubDbContext())
+            {
+                var updatedMovie = db.Movies
+                    .Where(u => u.Id == movie.Id)
+                    .First();
+                updatedMovie.Name = movie.Name;
+                updatedMovie.Price = movie.Price;
+                updatedMovie.Quantity = movie.Quantity;
+                updatedMovie.GenreId = movie.GenreId;
+                updatedMovie.DirectorName = movie.DirectorName;
+                updatedMovie.CurrentQuantity = movie.CurrentQuantity;
+                updatedMovie.Adult = movie.Adult;
+                db.SaveChanges();
+            };
+            return true;
+        }
+
         public bool AddMovie(MovieEntity movie)
         {
             using(var db = new VideoClubDbContext())
@@ -98,25 +117,25 @@
             }
         }
 
-        public bool HasMovie(string name)
+        public bool HasMovie(string movieName)
         {
             using (var db = new VideoClubDbContext())
             {
                 var hasMovie = db.Movies
-                    .Where(h => h.Name == name)
+                    .Where(h => h.Name == movieName)
                     .Any();
                 return hasMovie;
             }
         }
 
-        public int MovieId(string name)
+        public bool HasMovieByNameAndOtherId(MovieEntity movie)
         {
             using( var db = new VideoClubDbContext())
             {
-                var movieId = db.Movies
-                    .Where(m => m.Name == name)
-                    .FirstOrDefault();
-                return movieId.Id;
+                var otherMovie = db.Movies
+                    .Where(m => m.Name == movie.Name & m.Id != movie.Id)
+                    .Any();
+                return otherMovie;
             }
         }
 
