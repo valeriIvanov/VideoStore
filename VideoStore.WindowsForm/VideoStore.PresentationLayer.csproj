@@ -52,7 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormLogic.cs" />
+    <Compile Include="PresentationLayer.Logic.cs" />
     <Compile Include="FormVideoClub.cs">
       <SubType>Form</SubType>
     </Compile>
