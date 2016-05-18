@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace VideoStore.PresentationLayer
 {
-    public partial class FormVideoClub : Form
+    public partial class FormVideoStore : Form
     {
         private FormLogic logic = new FormLogic();
-        public FormVideoClub()
+        public FormVideoStore()
         {
             InitializeComponent();
             SelectMovie(true);

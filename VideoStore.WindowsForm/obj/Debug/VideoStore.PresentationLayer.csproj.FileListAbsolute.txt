@@ -16,4 +16,4 @@ D:\VideoStore\VideoStore.WindowsForm\obj\Debug\Startup.Properties.Resources.reso
 D:\VideoStore\VideoStore.WindowsForm\obj\Debug\VideoStore.PresentationLayer.csproj.GenerateResource.Cache
 D:\VideoStore\VideoStore.WindowsForm\obj\Debug\Startup.exe
 D:\VideoStore\VideoStore.WindowsForm\obj\Debug\Startup.pdb
-D:\VideoStore\VideoStore.WindowsForm\obj\Debug\VideoStore.PresentationLayer.FormVideoClub.resources
+D:\VideoStore\VideoStore.WindowsForm\obj\Debug\VideoStore.PresentationLayer.FormVideoStore.resources

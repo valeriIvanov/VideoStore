@@ -16,7 +16,7 @@ namespace VideoStore.PresentationLayer
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormVideoClub());
+            Application.Run(new FormVideoStore());
         }
     }
 }

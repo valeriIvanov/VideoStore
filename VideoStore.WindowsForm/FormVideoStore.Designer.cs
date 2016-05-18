@@ -1,6 +1,6 @@
 ﻿namespace VideoStore.PresentationLayer
 {
-    partial class FormVideoClub
+    partial class FormVideoStore
     {
         /// <summary>
         /// Required designer variable.
