@@ -1,0 +1,4 @@
+D:\VideoStore\VideoStore.Model\bin\Debug\VideoClub.Model.dll
+D:\VideoStore\VideoStore.Model\bin\Debug\VideoClub.Model.pdb
+D:\VideoStore\VideoStore.Model\obj\Debug\VideoClub.Model.dll
+D:\VideoStore\VideoStore.Model\obj\Debug\VideoClub.Model.pdb
