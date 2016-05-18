@@ -1,4 +1,5 @@
-D:\VideoStore\VideoStore.Model\bin\Debug\VideoClub.Model.dll
-D:\VideoStore\VideoStore.Model\bin\Debug\VideoClub.Model.pdb
-D:\VideoStore\VideoStore.Model\obj\Debug\VideoClub.Model.dll
-D:\VideoStore\VideoStore.Model\obj\Debug\VideoClub.Model.pdb
+D:\VideoStore\VideoStore.Model\bin\Debug\VideoStore.Model.dll
+D:\VideoStore\VideoStore.Model\bin\Debug\VideoStore.Model.pdb
+D:\VideoStore\VideoStore.Model\obj\Debug\VideoStore.Model.csprojResolveAssemblyReference.cache
+D:\VideoStore\VideoStore.Model\obj\Debug\VideoStore.Model.dll
+D:\VideoStore\VideoStore.Model\obj\Debug\VideoStore.Model.pdb

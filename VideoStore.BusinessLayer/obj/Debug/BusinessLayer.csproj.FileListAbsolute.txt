@@ -11,12 +11,12 @@ D:\VideoClub\BusinessLayer\obj\Debug\BusinessLayer.dll
 D:\VideoClub\BusinessLayer\obj\Debug\BusinessLayer.pdb
 D:\VideoStore\VideoStore.BusinessLayer\bin\Debug\BusinessLayer.dll
 D:\VideoStore\VideoStore.BusinessLayer\bin\Debug\BusinessLayer.pdb
-D:\VideoStore\VideoStore.BusinessLayer\bin\Debug\VideoClub.Model.dll
-D:\VideoStore\VideoStore.BusinessLayer\bin\Debug\VideoClub.Repository.dll
 D:\VideoStore\VideoStore.BusinessLayer\bin\Debug\EntityFramework.dll
-D:\VideoStore\VideoStore.BusinessLayer\bin\Debug\VideoClub.Model.pdb
-D:\VideoStore\VideoStore.BusinessLayer\bin\Debug\VideoClub.Repository.pdb
 D:\VideoStore\VideoStore.BusinessLayer\bin\Debug\EntityFramework.xml
 D:\VideoStore\VideoStore.BusinessLayer\obj\Debug\BusinessLayer.csprojResolveAssemblyReference.cache
 D:\VideoStore\VideoStore.BusinessLayer\obj\Debug\BusinessLayer.dll
 D:\VideoStore\VideoStore.BusinessLayer\obj\Debug\BusinessLayer.pdb
+D:\VideoStore\VideoStore.BusinessLayer\bin\Debug\VideoStore.Model.dll
+D:\VideoStore\VideoStore.BusinessLayer\bin\Debug\VideoStore.Repository.dll
+D:\VideoStore\VideoStore.BusinessLayer\bin\Debug\VideoStore.Model.pdb
+D:\VideoStore\VideoStore.BusinessLayer\bin\Debug\VideoStore.Repository.pdb

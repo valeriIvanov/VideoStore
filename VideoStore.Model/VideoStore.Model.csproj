@@ -7,8 +7,8 @@
     <ProjectGuid>{B6402E9B-6AAE-44EF-A43C-A7AFF997C191}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>VideoClub.Model</RootNamespace>
-    <AssemblyName>VideoClub.Model</AssemblyName>
+    <RootNamespace>VideoStore.Model</RootNamespace>
+    <AssemblyName>VideoStore.Model</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
