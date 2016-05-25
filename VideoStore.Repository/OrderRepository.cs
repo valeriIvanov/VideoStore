@@ -6,7 +6,7 @@ namespace VideoStore.Repository
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
-    using VideoStore.Models;
+    using VideoStore.Model;
 
     public class OrderRepository
     {

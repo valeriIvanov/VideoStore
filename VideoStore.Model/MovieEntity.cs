@@ -1,6 +1,6 @@
 ﻿
 
-namespace VideoStore.Models
+namespace VideoStore.Model
 {
     using System;
     using System.Collections;

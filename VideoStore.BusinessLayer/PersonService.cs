@@ -6,7 +6,7 @@
     using System.Text;
     using System.Threading.Tasks;
     using VideoStore.Repository;
-    using VideoStore.Models;
+    using VideoStore.Model;
 
     public class PersonService
     {

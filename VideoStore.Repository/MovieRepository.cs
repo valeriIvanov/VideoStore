@@ -5,7 +5,7 @@
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
-    using VideoStore.Models;
+    using VideoStore.Model;
 
     public class MovieRepository
     {
@@ -54,7 +54,6 @@
                     })
                     .OrderBy(m => m.MovieName)
                     .ToList();
-
                 foreach (var movie in movies)
                 {
                     movieList.Add(movie.ID.ToString());

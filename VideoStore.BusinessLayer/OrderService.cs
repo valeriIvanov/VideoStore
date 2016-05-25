@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VideoStore.Repository;
-using VideoStore.Models;
+using VideoStore.Model;
 
 namespace BusinessLayer
 {

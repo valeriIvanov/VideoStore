@@ -2,7 +2,7 @@
 namespace VideoStore.Repository
 {
     using System.Data.Entity;
-    using VideoStore.Models;
+    using VideoStore.Model;
 
     public class VideoClubDbContext : DbContext
     {

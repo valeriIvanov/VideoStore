@@ -1,5 +1,5 @@
 ﻿
-namespace VideoStore.Models
+namespace VideoStore.Model
 {
     public enum GenreName
     {
