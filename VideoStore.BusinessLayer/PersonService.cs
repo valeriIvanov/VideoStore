@@ -27,9 +27,9 @@
 
                     };
 
-                    if (personRepository.HasPerson(personName) == false)
+                    if (personRepository.HasEntity(personName) == false)
                     {
-                        personRepository.AddPerson(personEntity);
+                        personRepository.AddEntity(personEntity);
                         return "Клиентът е запазен";
                     }
                     else { return "Имате дублиращ се запис!"; }
@@ -68,9 +68,9 @@
 
                 };
 
-                if (personRepository.HasAnotherPersonByNameAndId(personEntity) == false)
+                if (personRepository.HasEntityByNameAndOtherId(personEntity) == false)
                 {
-                    personRepository.UpdatePerson(personEntity);
+                    personRepository.UpdateEntity(personEntity);
                     return "Клиентът е запазен";
                 }
                 else { return "Имате дублиращ се запис!"; }
@@ -81,11 +81,11 @@
 
         public string DeletePerson(string personName)
         {
-            if(personRepository.HasPerson(personName) == true)
+            if(personRepository.HasEntity(personName) == true)
             {
                 if (orderRepository.PersonHasOrders(personName) == false)
                 {
-                    personRepository.DeletePerson(personName);
+                    personRepository.DeleteEntity(personName);
                     return "Клиента е изтрит.";
                 }
                 else { return "Клиента не е изтрит. Възможно е да има направени поръчки."; }
@@ -95,7 +95,7 @@
 
         public List<string> SelectPerson(string personName)
         {
-            return personRepository.SelectPerson(personName);
+            return personRepository.SelectByName(personName);
         }
 
     }

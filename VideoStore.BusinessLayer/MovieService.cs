@@ -31,9 +31,9 @@ namespace BusinessLayer
                         Price = moviePrice,
                         Adult = adult,
                     };
-                    if (movieRepository.HasMovie(name) == false)
+                    if (movieRepository.HasEntity(name) == false)
                     {
-                        if (movieRepository.AddMovie(movie) == true)
+                        if (movieRepository.AddEntity(movie) == true)
                         {
                             return "Филма е запазен!";
                         }
@@ -73,9 +73,9 @@ namespace BusinessLayer
                     Price = moviePrice,
                     Adult = adult,
                 };
-                if (movieRepository.HasMovieByNameAndOtherId(movie) == false)
+                if (movieRepository.HasEntityByNameAndOtherId(movie) == false)
                 {
-                    if (movieRepository.UpdateMovie(movie) == true)
+                    if (movieRepository.UpdateEntity(movie) == true)
                     {
                         return "Филма е редактиран!";
                     }
@@ -89,12 +89,12 @@ namespace BusinessLayer
 
         public string DeleteMovie(string movieNumber, string movieName)
         {
-            if(movieRepository.HasMovie(movieName) == true)
+            if(movieRepository.HasEntity(movieName) == true)
             {
                 int number = int.Parse(movieNumber);
                 if (orderRepository.MovieHasOrders(number) == false)                    
                 {
-                    movieRepository.DeleteMovie(movieName);
+                    movieRepository.DeleteEntity(movieName);
                     return "Филмът е изтрит";
                 }
                 else { return "Филмът не е изтрит, резервиран e от клиент."; }
@@ -102,16 +102,14 @@ namespace BusinessLayer
             else { return "Въвели сте несъществуващ филм"; }
         }
 
-        //public void UpdateMovie();
-
         public List<string> SelectAllMovie()
         {
-            return movieRepository.SelectAllMovies();
+            return movieRepository.SelectAll();
         }
 
         public List<string> SelectMovieByName(string movieName)
         {
-            return movieRepository.SelectMovieByName(movieName);
+            return movieRepository.SelectByName(movieName);
         }
 
     }

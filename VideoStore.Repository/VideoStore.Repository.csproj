@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GenreRepository.cs" />
+    <Compile Include="IRepository.cs" />
     <Compile Include="MovieRepository.cs" />
     <Compile Include="OrderRepository.cs" />
     <Compile Include="PersonRepository.cs" />

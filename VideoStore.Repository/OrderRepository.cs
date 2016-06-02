@@ -65,6 +65,7 @@ namespace VideoStore.Repository
                 return listOrders;
             }
         }
+
         public string AddOrder(OrderEntity order)
         {
             using(var db = new VideoClubDbContext())

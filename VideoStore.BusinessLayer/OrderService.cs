@@ -21,10 +21,10 @@ namespace BusinessLayer
                 var date = DateTime.Now;
                 int currentYear = date.Year;
 
-                if(movieRepository.HasMovie(movieName) == true & personRepository.HasPerson(personName) == true)
+                if(movieRepository.HasEntity(movieName) == true & personRepository.HasEntity(personName) == true)
                 {
-                    var personEntity = personRepository.GetPersonEntity(personName);
-                    var movieEtity = movieRepository.GetMovieEntity(movieName);
+                    var personEntity = personRepository.GetEntity(personName);
+                    var movieEtity = movieRepository.GetEntity(movieName);
 
                     if (movieEtity.Adult == true & (currentYear - personEntity.BornYear) >= 18)
                     {

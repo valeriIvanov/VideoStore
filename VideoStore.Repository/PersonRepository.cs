@@ -7,15 +7,15 @@
     using System.Threading.Tasks;
     using VideoStore.Model;
 
-    public class PersonRepository
+    public class PersonRepository : IRepository<PersonEntity>
     {
-        public List<string> SelectPerson(string personName)
+        public List<string> SelectByName(string name)
         {
             List<string> personList = new List<string>();
             using(var db = new VideoClubDbContext())
             {
                 var person = db.Persons
-                    .Where(p => p.Name == personName)
+                    .Where(p => p.Name == name)
                     .ToList();
                 foreach (var subject in person)
                 {
@@ -27,36 +27,36 @@
             }
         }
 
-        public bool AddPerson(PersonEntity Person)
+        public bool AddEntity(PersonEntity entity)
         {
             using(var db = new VideoClubDbContext())
             {
-                db.Persons.Add(Person);
+                db.Persons.Add(entity);
                 db.SaveChanges();
             }
             return true;
         }
 
-        public bool UpdatePerson(PersonEntity person)
+        public bool UpdateEntity(PersonEntity entity)
         {
             using(var db = new VideoClubDbContext())
             {
                 var updatedPerson = db.Persons
-                    .Where(p => p.Id == person.Id)
+                    .Where(p => p.Id == entity.Id)
                     .First();
-                updatedPerson.Name = person.Name;
-                updatedPerson.BornYear = person.BornYear;
+                updatedPerson.Name = entity.Name;
+                updatedPerson.BornYear = entity.BornYear;
                 db.SaveChanges();
             }
             return true;
         }
 
-        public bool DeletePerson(string personName)
+        public bool DeleteEntity(string name)
         {
             using(var db = new VideoClubDbContext())
             {
                 var person = db.Persons
-                    .Where(p => p.Name == personName)
+                    .Where(p => p.Name == name)
                     .First();
                 db.Persons.Remove(person);
                 db.SaveChanges();
@@ -64,7 +64,7 @@
             }
         }
 
-        public bool HasPerson(string name)
+        public bool HasEntity(string name)
         {
             using(var db = new VideoClubDbContext())
             {
@@ -76,40 +76,47 @@
             }
         }
 
-        public bool HasAnotherPersonByNameAndId(PersonEntity person)
+        public bool HasEntityByNameAndOtherId(PersonEntity entity)
         {
             using (var db = new VideoClubDbContext())
             {
 
                 var hasPerson = db.Persons
-                    .Where(h => h.Name == person.Name & h.Id != person.Id)
+                    .Where(h => h.Name == entity.Name & h.Id != entity.Id)
                     .Any();
                 return hasPerson;
             }
         }
 
-        public int PersonId(string name)
-        {
-            using (var db = new VideoClubDbContext())
-            {
-
-                var hasName = db.Persons
-                    .Where(h => h.Name == name)
-                    .FirstOrDefault();
-                return hasName.Id;
-            }
-        }
-
-        public PersonEntity GetPersonEntity(string personName)
+        public PersonEntity GetEntity(string name)
         {
             using(var db = new VideoClubDbContext())
             {
                 var person = db.Persons
-                    .Where(p => p.Name == personName)
+                    .Where(p => p.Name == name)
                     .FirstOrDefault();
                 return person;
             }
         }
 
+        public List<string> SelectAll()
+        {
+            List<string> personList = new List<string>();
+
+            using(var db = new VideoClubDbContext())
+            {
+                var persons = db.Persons
+                    .OrderBy(p => p.Name)
+                    .ToList();
+                foreach (var person in persons)
+                {
+                    personList.Add(person.Id.ToString());
+                    personList.Add(person.Name.ToString());
+                    personList.Add(person.BornYear.ToString());
+                }
+            }
+
+            return personList;
+        }
     }
 }

@@ -32,17 +32,6 @@
             
         }
 
-        public int ReturnGenreId(GenreEntity genre)
-        {
-            using (var db = new VideoClubDbContext())
-            {
-                var genreNumber = db.Genres
-                    .Where(h => h.Name == genre.Name)
-                    .FirstOrDefault();
-                return genreNumber.Id;
-            }
-        }
-
         public GenreEntity getGenreEntity(string genre)
         {
             using (var db = new VideoClubDbContext())
